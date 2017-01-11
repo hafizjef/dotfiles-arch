@@ -89,6 +89,14 @@ source $ZSH/oh-my-zsh.sh
 [[ -z "$TMUX" ]] && exec tmux attach
 
 # clean obselete packages
-alias sysclean="sudo pacman -Rs $(pacman -Qtdq)"
+alias sysclean="pacaur -Rns \$(pacaur -Qdtq)"
 alias ssu="pacaur -Syu"
 alias night="light -S 5"
+
+# coreutils safe commands
+alias mv="timout 8 mv -iv"
+alias mkdir="mkdir -p -v"
+alias rm="noglob timeout 3 rm -iv --one-file-system"
+
+# nvm init
+source /usr/share/nvm/init-nvm.sh
