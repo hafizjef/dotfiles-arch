@@ -5,10 +5,18 @@
   export ZSH=/home/max/.oh-my-zsh
   export EDITOR=/usr/bin/vim
 
+# MiniConda  
+export PATH="/home/max/miniconda3/bin:$PATH"
+
+# PYTHON ENV
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+#export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
+
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="pygmalion"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -30,7 +38,7 @@ ZSH_THEME="pygmalion"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -101,3 +109,9 @@ alias rm="noglob timeout 3 rm -Iv --one-file-system"
 
 # nvm init
 source /usr/share/nvm/init-nvm.sh
+
+export POWERLINE_COMMAND=powerline
+export POWERLINE_CONFIG_COMMAND=powerline-config
+
+powerline-daemon -q
+. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
