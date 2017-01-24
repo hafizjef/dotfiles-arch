@@ -95,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 
 # tmux auto run and reattach
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux attach
+[[ -z "$TMUX" ]] && exec tmux #attach
 
 # clean obselete packages
 alias sysclean="pacaur -Rns \$(pacaur -Qdtq)"
@@ -114,4 +114,8 @@ export POWERLINE_COMMAND=powerline
 export POWERLINE_CONFIG_COMMAND=powerline-config
 
 powerline-daemon -q
-. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+. /home/max/miniconda3/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
+
+function mm() {
+        mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$@"
+    }
