@@ -15,12 +15,15 @@ set showmatch
 set incsearch  " search as character are entered
 set hlsearch
 
+" su-write
+command W w !sudo tee % > /dev/null
+
 " remap leader to space
 let mapleader="\<Space>"
 
 nnoremap j gj  " move vertically by visual line
 nnoremap k gk
-nnoremap <Esc><Esc> :nohlsearch<CR>
+nnoremap <leader><Esc> :nohlsearch<CR>
 
 nnoremap gV `[v`] " highlight last inserted text
 
