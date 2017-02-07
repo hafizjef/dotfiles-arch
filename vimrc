@@ -1,6 +1,11 @@
 filetype on
 syntax on
 colorscheme Tomorrow-Night
+
+if &diff
+    colorscheme Tomorrow-Night
+endif
+
 set t_Co=256
 set laststatus=2
 set tabstop=4

@@ -39,6 +39,10 @@ alias mv="timeout 8 mv -iv"
 alias mkdir="mkdir -p -v"
 alias rm="noglob timeout 3 rm -Iv --one-file-system"
 
+# tmux alias
+alias tml="tmux ls"
+alias tmk="tmux kill-session -a"
+
 # load nvm
 alias loadnvm="source /usr/share/nvm/init-nvm.sh"
 
@@ -52,5 +56,5 @@ function mm() {
 
 # google search
 function gs() {
-    chromium google.com/search?q="$*" >/dev/null 2>&1
+    chromium "google.com/search?q=$*" >/dev/null 2>&1
 }
