@@ -1,6 +1,16 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Supress Java Options
+_SILENT_JAVA_OPTIONS="$_JAVA_OPTIONS"
+unset _JAVA_OPTIONS
+alias java='java "$_SILENT_JAVA_OPTIONS"'
+
+# React-Native
+export ANDROID_HOME=${HOME}/Android/Sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/max/.oh-my-zsh
 export EDITOR=/usr/bin/vim
@@ -43,8 +53,15 @@ alias rm="noglob timeout 3 rm -Iv --one-file-system"
 alias tml="tmux ls"
 alias tmk="tmux kill-session -a"
 
+# pip upgrade all
+alias pip-upgrade-all="sudo pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 sudo pip3 install -U"
+
+# Developments alias
 # load nvm
 alias loadnvm="source /usr/share/nvm/init-nvm.sh"
+
+# temporarily resize tmpfs to 4G (default half RAM)
+alias tmpup="sudo mount -o remount,size=4G,noatime /tmp"
 
 powerline-daemon -q
 . /home/max/miniconda3/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
