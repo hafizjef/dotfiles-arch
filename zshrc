@@ -22,6 +22,10 @@ export POWERLINE_CONFIG_COMMAND=powerline-config
 # MiniConda  
 export PATH="/home/max/miniconda3/bin:$PATH"
 
+# npm-prefix
+#PATH="$HOME/.node_modules/bin:$PATH"
+#export npm_config_prefix=~/.node_modules
+
 ZSH_THEME="agnoster"
 
 plugins=(git)
@@ -53,6 +57,9 @@ alias rm="noglob timeout 3 rm -Iv --one-file-system"
 alias tml="tmux ls"
 alias tmk="tmux kill-session -a"
 
+# refresh-mirrors
+alias update-mirror="sudo reflector --latest 10 --protocol https --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+
 # pip upgrade all
 alias pip-upgrade-all="sudo pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 sudo pip3 install -U"
 
@@ -74,4 +81,8 @@ function mm() {
 # google search
 function gs() {
     chromium "google.com/search?q=$*" >/dev/null 2>&1
+}
+
+function md5() {
+    md5sum -c <<<"$2  $1"
 }
