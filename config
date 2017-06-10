@@ -1,0 +1,27 @@
+auto-reload yes
+macro y set browser "mpv %u"; toggle-article-read "read" ; open-in-browser ; set browser "chromium %u"
+browser chromium
+feed-sort-order title-desc
+reload-threads 2
+player mpv
+
+
+# --- key bind ---
+unbind-key R
+bind-key \ reload-all
+bind-key "RIGHT" open
+bind-key "LEFT" quit
+
+# --- colors ---
+color background        color46   color235
+color listnormal        default   color235
+color listnormal_unread default   color235    bold  
+color listfocus         white     color238    
+color listfocus_unread  white     color238    
+color info              white     color124    protect
+color article           default   default
+
+# highlights
+highlight article "^(Title):.*$" blue default
+highlight article "https?://[^ ]+" red default
+highlight article "\\[image\\ [0-9]+\\]" green default
