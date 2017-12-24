@@ -16,11 +16,11 @@ export ZSH=/home/max/.oh-my-zsh
 export EDITOR=/usr/bin/vim
 
 # Powerline
-export POWERLINE_COMMAND=powerline
-export POWERLINE_CONFIG_COMMAND=powerline-config
+# export POWERLINE_COMMAND=powerline
+# export POWERLINE_CONFIG_COMMAND=powerline-config
 
 # MiniConda  
-export PATH="/home/max/miniconda3/bin:$PATH"
+# export PATH="/home/max/miniconda3/bin:$PATH"
 
 # npm-prefix
 #PATH="$HOME/.node_modules/bin:$PATH"
@@ -70,8 +70,11 @@ alias loadnvm="source /usr/share/nvm/init-nvm.sh"
 # temporarily resize tmpfs to 4G (default half RAM)
 alias tmpup="sudo mount -o remount,size=4G,noatime /tmp"
 
-powerline-daemon -q
-. /home/max/miniconda3/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
+#powerline-daemon -q
+#. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+
+#powerline
+# . /usr/share/zsh/site-contrib/powerline.zsh
 
 # search for music on youtube and play on MPV
 function mm() {
@@ -86,3 +89,5 @@ function gs() {
 function md5() {
     md5sum -c <<<"$2  $1"
 }
+
+export PATH="$HOME/.yarn/bin:$PATH"
